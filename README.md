@@ -86,5 +86,5 @@ y_rna, _, _ = lsim (G, w, t)
 
 # Compara a soma do erro absoluto:
 r = [abs (y1 - y2) for y1 in y_esp for y2 in y_rna]
-print ("Erro = ", r)
+print ("Erro = ", sum (r))
 ```
