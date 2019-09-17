@@ -11,13 +11,13 @@ from PyQt5.QtCore import QTimer
 import sys
 from LayoutResources import Ui_mainWindow
 import numpy as np
-from utils import Network, Input, Output, BacklashRegulator, Plant
+from utils import Network, Plant
+from iorpy import Input, Output, BacklashRegulator
 import time
 
 
 class MainApp (QWidget):
-    ''' Classe principal. A princípio, monolítica. '''
- 
+    
     def __init__ (self):
         ''' Construtor não modularizado '''
         # Construtor da classe pai:
@@ -127,7 +127,6 @@ class MainApp (QWidget):
             # Aplica na planta:
             #self.output.apply (wk)
             self.plant.apply(wk)
-            #print (self.yk)
             # Atualiza sinais:
             self.uk1 = uk
             self.ek1 = ek
